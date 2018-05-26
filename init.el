@@ -43,3 +43,7 @@
 
 ;; 1-map
 (define-key 1-map (kbd "m") 'mu4e)
+
+(custom-set-variables
+ '(ido-mode (quote both) nil (ido)))
+

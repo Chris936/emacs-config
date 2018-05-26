@@ -17,3 +17,10 @@
 
 (use-package try
   :ensure t)
+;; Function to load files
+(defun load-if-exists (f)
+  (if (file-readable-p f)
+      (load-file f)))
+
+;; Mu4e config
+(load-if-exists "~/.emacs.d/mu4e_config.el")

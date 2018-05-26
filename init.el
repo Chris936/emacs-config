@@ -29,3 +29,14 @@
 
 ;; Mu4e config
 (load-if-exists "~/.emacs.d/mu4e_config.el")
+
+;; Custom key-map
+(define-prefix-command '1-map)
+(global-set-key (kbd "C-1") '1-map)
+
+;; Custom keybindings
+(global-set-key (kbd "C-x g") 'magit-status)
+(global-set-key (kbd "C-x t") 'grep-targeted-word)
+
+;; 1-map
+(define-key 1-map (kbd "m") 'mu4e)

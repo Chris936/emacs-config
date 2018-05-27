@@ -47,6 +47,13 @@
 ;; 1-map
 (define-key 1-map (kbd "m") 'mu4e)
 
+;; Org-mode
+(use-package org-bullets
+  :ensure t
+  :config
+  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
+
+;; Enable ido-mode for buffers and files.
 (custom-set-variables
  '(ido-mode (quote both) nil (ido)))
 

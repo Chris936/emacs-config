@@ -53,6 +53,18 @@
   :config
   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
 
+;; Ace-window
+(use-package ace-window
+  :ensure t
+  :init
+  (progn
+    (global-set-key [remap other-window] 'ace-window)
+    (custom-set-faces
+     '(aw-leading-char-face
+       ((t (:inherit ace-jump-face-foreground :height 1.7)))))
+    ))
+  
+
 ;; Enable ido-mode for buffers and files.
 (setq ido-enable-flex-matching t)
 (setq ido-everywhere t)

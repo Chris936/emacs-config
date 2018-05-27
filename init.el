@@ -95,10 +95,5 @@
     (define-key minibuffer-local-map (kbd "C-r") 'counsel-minibuffer-history)
     ))
 
-;; Enable ido-mode for buffers and files.
-(setq ido-enable-flex-matching t)
-(setq ido-everywhere t)
-(ido-mode 1)
-
 ;; Use ibuffer instead of list-buffer.
 (defalias 'list-buffers 'ibuffer-other-window)

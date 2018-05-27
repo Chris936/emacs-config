@@ -1,5 +1,8 @@
 (setq inhibit-startup-message t)
 
+;; Disable tool-bar.
+(tool-bar-mode -1)
+
 ;; Melpa pack archives. Copied from melpa.org.
 (require 'package)
 (let* ((no-ssl (and (memq system-type '(windows-nt ms-dos))

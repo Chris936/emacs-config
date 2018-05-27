@@ -54,6 +54,6 @@
   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
 
 ;; Enable ido-mode for buffers and files.
-(custom-set-variables
- '(ido-mode (quote both) nil (ido)))
-
+(setq ido-enable-flex-matching t)
+(setq ido-everywhere t)
+(ido-mode 1)

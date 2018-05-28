@@ -88,6 +88,17 @@
 	 ("C-x C-f" . counsel-find-file))
     )
 
+;; Avy
 (use-package avy
   :ensure t
   :bind ("C-r" . avy-goto-char-2))
+
+;; Auto-Complete
+(use-package auto-complete
+  :ensure t
+  :init
+  (progn
+    (ac-config-default)
+    (global-auto-complete-mode t)
+    )
+  (setq ac-auto-show-menu 0.1))

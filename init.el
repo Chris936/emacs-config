@@ -33,7 +33,7 @@
   (if (file-readable-p f)
       (load-file f)))
 
-;; Mu4e config
+;; Mu4e config. Comment out email is not used within emacs.
 (load-if-exists "~/.emacs.d/mu4e_config.el")
 
 ;; Custom key-map

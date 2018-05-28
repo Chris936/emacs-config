@@ -83,7 +83,6 @@
 (use-package swiper
   :ensure t
   :bind (("C-s" . swiper)
-	 ("C-r" . swiper)
 	 ("C-c C-r" . ivy-resume)
 	 ("M-x" . counsel-M-x)
 	 ("C-x C-f" . counsel-find-file))
@@ -91,4 +90,4 @@
 
 (use-package avy
   :ensure t
-  :bind ("M-s" . avy-goto-char))
+  :bind ("C-r" . avy-goto-char-2))

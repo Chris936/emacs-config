@@ -43,6 +43,8 @@
 ;; Custom keybindings
 (global-set-key (kbd "C-x g") 'magit-status)
 (global-set-key (kbd "C-x t") 'grep-targeted-word)
+(global-set-key (kbd "C-c C-r") 'ivy-resume)
+
 
 ;; 1-map
 (define-key 1-map (kbd "m") 'mu4e)

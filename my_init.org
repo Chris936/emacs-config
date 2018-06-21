@@ -1,0 +1,128 @@
+* Interface tweaks.  
+  #+BEGIN_SRC emacs-lisp
+  (setq inhibit-startup-message t)
+  (tool-bar-mode -1)
+  (fset 'yes-or-no-p 'y-or-n-p)
+  (global-set-key (kbd "<f5>") 'revert-buffer)
+  #+END_SRC
+* Try.
+  #+BEGIN_SRC emacs-lisp
+  (use-package try
+  :ensure t)
+  #+END_SRC
+* Grep-a-lot.
+  #+BEGIN_SRC emacs-lisp
+  (use-package grep-a-lot
+  :ensure t)
+  #+END_SRC
+* Macros.
+** Grep.
+   Recursivlely greps for a targeted word from 2 directories back.
+   #+BEGIN_SRC emacs-lisp
+
+   (fset 'grep-targeted-word
+   (lambda (&optional arg) "Keyboard macro." (interactive "p") (kmacro-exec-ring-item (quote ([134217826 67108896 134217830 134217847 134217848 103 114 101 112 return 25 32 46 46 47 32 45 82 return] 0 "%d")) arg)))
+   #+END_SRC
+   
+* Defined functions.
+** Load file.
+   Function to load files
+   #+BEGIN_SRC emacs-lisp
+   (defun load-if-exists (f)
+   (if (file-readable-p f)
+   (load-file f)))   
+   #+END_SRC
+
+* Loaded files.
+** Mu4e config.
+   Comment out if email is not used within emacs.
+   #+BEGIN_SRC emacs-lisp
+   (load-if-exists "~/.emacs.d/mu4e_config.el")
+   #+END_SRC
+
+* Key-maps.
+  #+BEGIN_SRC emacs-lisp
+  (define-prefix-command '1-map)
+  (global-set-key (kbd "C-1") '1-map)  
+  #+END_SRC
+* Key-bindings.
+  Custom bindings.
+** C-
+  #+BEGIN_SRC emacs-lisp
+  (global-set-key (kbd "C-x g") 'magit-status)
+  (global-set-key (kbd "C-x t") 'grep-targeted-word)
+  (global-set-key (kbd "C-c C-r") 'ivy-resume)
+  #+END_SRC
+** 1-map(C-1).
+   #+BEGIN_SRC emacs-lisp
+   (define-key 1-map (kbd "m") 'mu4e)
+   #+END_SRC
+* Org-mode.
+** Bullets.
+   #+BEGIN_SRC emacs-lisp
+   (use-package org-bullets
+   :ensure t
+   :config
+   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))   
+   #+END_SRC
+* Ace-window.
+  #+BEGIN_SRC emacs-lisp
+  (use-package ace-window
+  :ensure t
+  :init
+  (progn
+    (global-set-key [remap other-window] 'ace-window)
+    (custom-set-faces
+     '(aw-leading-char-face
+       ((t (:inherit ace-jump-face-foreground :height 1.7)))))
+    ))
+  #+END_SRC
+* Ivy.
+  #+BEGIN_SRC emacs-lisp
+  (use-package ivy
+  :ensure t
+  :diminish (ivy-mode)
+  :bind (("C-x b" . ivy-switch-buffer))
+  :config
+  (ivy-mode 1)
+  (setq ivy-use-virtual-buffers t)
+  (setq ivy-display-style 'fancy))
+  #+END_SRC
+* Counsel
+  #+BEGIN_SRC emacs-lisp
+  (use-package counsel
+  :ensure t
+  )
+  #+END_SRC
+* Swiper.
+  #+BEGIN_SRC emacs-lisp
+  (use-package swiper
+  :ensure t
+  :bind (("C-s" . swiper)
+	 ("C-c C-r" . ivy-resume)
+	 ("M-x" . counsel-M-x)
+	 ("C-x C-f" . counsel-find-file))
+    )
+  #+END_SRC
+* Avy.
+  #+BEGIN_SRC emacs-lisp
+  (use-package avy
+  :ensure t
+  :bind ("C-r" . avy-goto-char-2))
+  #+END_SRC
+* Auto-Complete.
+  #+BEGIN_SRC emacs-lisp
+  (use-package auto-complete
+  :ensure t
+  :init
+  (progn
+    (ac-config-default)
+    (global-auto-complete-mode t)
+    )
+  (setq ac-auto-show-menu 0.1))  
+  #+END_SRC
+* Theme.
+  #+BEGIN_SRC emacs-lisp
+  (use-package zenburn-theme
+  :ensure t)
+  #+END_SRC

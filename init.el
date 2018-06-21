@@ -104,3 +104,6 @@
     (global-auto-complete-mode t)
     )
   (setq ac-auto-show-menu 0.1))
+
+(use-package zenburn-theme
+  :ensure t)

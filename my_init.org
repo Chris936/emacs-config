@@ -140,6 +140,8 @@
       :init
       (add-hook 'python-mode-hook 'jedi:setup)
       (add-hook 'python-mode-hook 'jedi:ac-setup))
+
+      (setq python-shell-interpreter "/usr/bin/python3")
     #+END_SRC
 * Yasnippet
   #+BEGIN_SRC emacs-lisp

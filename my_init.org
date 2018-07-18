@@ -35,9 +35,9 @@
 
 * Loaded files.
 ** Mu4e config.
-   Comment out if email is not used within emacs.
+   Uncomment if Mu4e is used within emacs.
    #+BEGIN_SRC emacs-lisp
-   (load-if-exists "~/.emacs.d/mu4e_config.el")
+   ;;(load-if-exists "~/.emacs.d/mu4e_config.el")
    #+END_SRC
 
 * Key-maps.

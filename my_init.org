@@ -170,3 +170,24 @@
       :init
       (global-undo-tree-mode))
   #+END_SRC  
+* Misc packages
+  #+BEGIN_SRC emacs-lisp
+    (global-hl-line-mode t)
+
+    (use-package beacon
+      :ensure t
+      :config
+      (beacon-mode 1)
+      (setq beacon-color "#AB00D5"))
+
+    (use-package hungry-delete
+      :ensure t
+      :config
+      (global-hungry-delete-mode))
+
+    (use-package expand-region
+      :ensure t
+      :config
+      (global-set-key (kbd "C-=") 'er/expand-region))
+  #+END_SRC
+  

@@ -146,6 +146,13 @@
 
       (setq python-shell-interpreter "/usr/bin/python3")
     #+END_SRC
+* Java
+  #+BEGIN_SRC emacs-lisp
+    (add-hook 'java-mode-hook(lambda ()
+			       (setq c-basic-offset 4
+				     tab-width 4
+				     ident-tabs-mode t)))
+    #+END_SRC
 * Yasnippet
   #+BEGIN_SRC emacs-lisp
     (use-package yasnippet

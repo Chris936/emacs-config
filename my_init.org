@@ -134,7 +134,8 @@
     (use-package flycheck
       :ensure t
       :init
-      (global-flycheck-mode t))
+      (global-flycheck-mode t)
+      (setq flycheck-clang-language-standard "c++11"))
   #+END_SRC
 * Python
   #+BEGIN_SRC emacs-lisp
